@@ -2,18 +2,19 @@
 
 browser.contextMenus.create(
   {
-    id: "log-selection",
-    title: browser.i18n.getMessage("contextMenuItemSelectionLogger"),
-    contexts: ["selection"],
+    id: "open-link-in-ancestry-library",
+    title: "Open link in AncestryLibrary",
+    contexts: ["link"],
   },
-  onCreated,
+  // onCreated,
+  // () => void browser.runtime.lastError,
 );
 
-browser.contextMenus.onClicked.addListener((info, tab) => {
-  switch (info.menuItemId) {
-    case "log-selection":
-      console.log(info.selectionText);
-      break;
-    // …
-  }
-});
+// browser.contextMenus.onClicked.addListener((info, tab) => {
+//   switch (info.menuItemId) {
+//     case "open-link-in-ancestry-library":
+//       console.log(info.selectionText);
+//       break;
+//     // ...
+//   }
+// });

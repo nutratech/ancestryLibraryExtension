@@ -1,21 +1,19 @@
 {
   "manifest_version": 2,
   "name": "AncestryLibraryOpener",
-  "version": "0.1.0",
-
   "description": "Right click search results in ancestry.com and quickly open in ancestrylibrary.com.",
+  "version": "0.1.0",
   "homepage_url": "https://github.com/nutratech/ancestryLibraryOpener",
+
   "icons": {
     "48": "icons/border-48.png",
     "96": "icons/border-96.png"
   },
 
-  "permissions": ["activeTab", "contextMenus"],
+  "background": {
+    "scripts": ["ancestryLibrary.js"],
+    "persistent": false
+  },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.ancestry.com/*"],
-      "js": ["ancestryLibrary.js"]
-    }
-  ]
+  "permissions": ["activeTab", "contextMenus"]
 }
