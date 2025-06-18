@@ -4,15 +4,17 @@
   "version": "0.1.0",
 
   "description": "Right click search results in ancestry.com and quickly open in ancestrylibrary.com.",
-
+  "homepage_url": "https://github.com/nutratech/ancestryLibraryOpener",
   "icons": {
     "48": "icons/border-48.png",
     "96": "icons/border-96.png"
   },
 
+  "permissions": ["activeTab", "contextMenus"],
+
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
+      "matches": ["*://*.ancestry.com/*"],
       "js": ["ancestryLibrary.js"]
     }
   ]
