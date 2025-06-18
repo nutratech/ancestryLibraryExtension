@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "AncestryLibraryOpener",
+  "version": "0.1.0",
+
+  "description": "Right click search results in ancestry.com and quickly open in ancestrylibrary.com.",
+
+  "icons": {
+    "48": "icons/border-48.png",
+    "96": "icons/border-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["ancestryLibrary.js"]
+    }
+  ]
+}
