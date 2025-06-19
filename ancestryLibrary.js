@@ -1,5 +1,9 @@
-// document.body.style.border = "5px solid red";
+// Remain platform independent
+if (typeof browser === "undefined") {
+  browser = chrome;
+}
 
+// Create context menu item
 browser.contextMenus.create(
   {
     id: "open-link-in-ancestry-library",
@@ -10,6 +14,7 @@ browser.contextMenus.create(
   () => void browser.runtime.lastError,
 );
 
+// Click event listener/handler
 browser.contextMenus.onClicked.addListener(function (info, tab) {
   console.log(info);
   switch (info.menuItemId) {
