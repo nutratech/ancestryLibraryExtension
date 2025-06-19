@@ -9,5 +9,5 @@ format:
 
 .PHONY: build
 build:
-	zip -rvl9 ext_packed_ancestry_lib.zip \
+	zip -rvl0 ext_packed_ancestry_lib.zip \
 	ancestryLibrary.js manifest.json icons/

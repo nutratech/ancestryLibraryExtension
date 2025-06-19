@@ -10,6 +10,12 @@
     "96": "icons/border-96.png"
   },
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "AncestryLibraryOpener@gamesguru"
+    }
+  },
+
   "background": {
     "scripts": ["ancestryLibrary.js"],
     "persistent": false
