@@ -3,16 +3,35 @@ if (typeof browser === "undefined") {
   browser = chrome;
 }
 
+const cmId = "open-link-in-ancestry-library";
+
 // Create context menu item
 browser.contextMenus.create(
   {
-    id: "open-link-in-ancestry-library",
+    id: cmId,
     title: "Open link in AncestryLibrary",
     contexts: ["link"],
+    // visible: false, // Initially hidden
   },
   // onCreated,
   () => void browser.runtime.lastError,
 );
+
+// Show/hide based on whether the right-clicked link is *.ancestry.com
+// browser.contextMenus.onShown.addListener((info, tab) => {
+//   const linkUrl = info.linkUrl;
+
+//   const isAncestrySubdomain = new URL(linkUrl).hostname.endsWith(
+//     ".ancestry.com",
+//   );
+
+//   browser.contextMenus.update(cmId, {
+//     visible: isAncestrySubdomain,
+//   });
+
+//   // Refresh menu and apply visibility settings
+//   browser.contextMenus.refresh();
+// });
 
 // Click event listener/handler
 browser.contextMenus.onClicked.addListener(function (info, tab) {

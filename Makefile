@@ -1,6 +1,5 @@
 SHELL := /bin/bash
-
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := format
 
 .PHONY: format
 format:
